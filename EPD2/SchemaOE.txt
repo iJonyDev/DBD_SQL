@@ -1,0 +1,116 @@
+|----------------ORDER_ITEMS ---------------|
+|  FK ORDERS            |-- order_id        |
+|  PK                   |-- line_item_id    |
+|  FK P_INFO            |-- product_id      |
+|                       |-- unit_price      |
+|                       |-- quantity        |
+
+
+|----------------- ORDERS ----------------- |
+|  PK                   |-- order_id        |
+|  FK CUSTOMERS         |-- customer_id     |
+|                       |-- order_date      |
+|                       |-- order_mode      |
+|                       |-- customer_ref    |
+|                       |-- order_status    |
+|                       |-- sales_rep_id    |
+|                       |-- promotion_id    |
+
+
+|-----------------CUSTOMERS ----------------|
+|  PK                   |-- customer_id     |
+|                       |-- cust_first_name |
+|                       |-- cust_last_name  |
+|                       |-- phone_numbers   |
+|                       |-- cust_address    |
+|                       |-- nls_language    | 
+|                       |-- nls_territory   |
+|                       |-- credit_limit    |
+|                       |-- cust_email      | 
+|                       |-- account_mgr_id  |
+|                       |-- cust_geo_location|
+|                       |-- date_of_birth   |
+|                       |-- marital_status  |
+|                       |-- gender          |
+|                       |-- income_level    |
+
+
+|------------ PRODUCT_INFORMATION ----------|
+|  PK                   |-- product_id      |
+|                       |-- product_name    |
+|                       |-- product_description|
+|                       |-- category        |
+|                       |-- weight_class    |
+|                       |-- warranty_period |
+|                       |-- supplier_id     |
+|                       |-- product_status  |
+|                       |-- list_price      |
+|                       |-- min_price       |
+|                       |-- catalog_url     |
+
+
+|----------- PRODUCT_DESCRIPTIONS ----------|
+|  FK P_INFO            |-- product_id      |
+|  PK                   |-- language_id     |
+|                       |-- translated_name |
+|                       |-- translated_description|
+
+
+|--------------- INVENTORIES ---------------|  
+|  FK P_INFO            |-- product_id      |     |---------------- WAREHOUSES ---------------|
+|  FK WAREHOUSES        |-- warehouse_id    | <---|  PK                   |-- warehouse_id    |
+|                       |-- quantity_on_hand|     |                       |-- warehouse_spec  |
+                                                  |                       |-- location_id     |
+                                                  |                       |-- warehouse_name  |
+                                                  |                       |-- wh_geo_location |
+
+
+
+
+
+
+
+
+|----------------ORDER_ITEMS ---------------|
+|  FK ORDERS            |-- order_id        | <-| |----------------- ORDERS ----------------- |
+|  PK                   |-- line_item_id    |   |-|  PK                   |-- order_id        |
+|  FK P_INFO            |-- product_id      | /-> |  FK CUSTOMERS         |-- customer_id     |
+|                       |-- unit_price      | |   |                       |-- order_date      |
+|                       |-- quantity        | |   |                       |-- order_mode      |
+                                              |   |                       |-- customer_ref    |
+                                              |   |                       |-- order_status    |
+                                              |   |                       |-- sales_rep_id    |
+                                              |   |                       |-- promotion_id    |
+                                              |
+|-----------------CUSTOMERS ----------------| |
+|  PK                   |-- customer_id     |-/
+|                       |-- cust_first_name |
+|                       |-- cust_last_name  |
+|                       |-- phone_numbers   |
+|                       |-- cust_address    |
+|                       |-- nls_language    | 
+|                       |-- nls_territory   |
+|                       |-- credit_limit    |
+|                       |-- cust_email      | 
+|                       |-- account_mgr_id  |
+|                       |-- cust_geo_location|
+|                       |-- date_of_birth   |
+|                       |-- marital_status  |
+|                       |-- gender          |
+|                       |-- income_level    |
+
+
+|------------ PRODUCT_INFORMATION ----------|
+|  PK                   |-- product_id      |     |----------- PRODUCT_DESCRIPTIONS ----------|
+|                       |-- product_name    |     |  FK P_INFO            |-- product_id      |
+|                       |-- product_description|  |  PK                   |-- language_id     |
+|                       |-- category        |     |                       |-- translated_name |
+|                       |-- weight_class    |     |                       |-- translated_description|
+|                       |-- warranty_period |
+|                       |-- supplier_id     |
+|                       |-- product_status  |
+|                       |-- list_price      |
+|                       |-- min_price       |
+|                       |-- catalog_url     |
+
+
