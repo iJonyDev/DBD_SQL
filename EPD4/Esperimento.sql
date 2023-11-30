@@ -91,6 +91,10 @@ E9. De cada empleado contratado a partir del 12 de Enero 2000 se desea mostrar e
 (LAST_NAME) y la fecha de contratación (HIRE_DATE). La fecha de contratación se deberá mostrar con el formato MM/DD/YYYY.
 Tiempo estimado: 10 minutos
 */
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/RRRR';
+SELECT FIRST_NAME, LAST_NAME, TO_CHAR(HIRE_DATE,)
+FROM  HR.EMPLOYEES
+WHERE HIRE_DATE > '12-JAN-2000';
 
 /*
 E10. Las llamadas internas de los diferentes departamentos se realizan marcando los últimos siete dígitos del número de teléfono
@@ -99,13 +103,32 @@ asignado a cada empleado. Muestre, a partir de la tabla EMPLOYEES, el nombre de 
 departamento con ID=30 . Tiempo estimado: 10 minutos
 */
 
+SELECT SUBSTR(PHONE_NUMBER,-10)
+FROM HR.EMPLOYEES
+WHERE DEPARTMENT_ID LIKE '30';
+
 /*
 E11. De aquellos empleados cuyo apellido empiece por F, se desea realizar una clasificación entre los que ganan comisión y
 aquellos que no ganan comisión, de forma que en el caso de ganar comisión se mostrará “Gana comisión” y en caso contrario “No
 gana comisión” . Tiempo estimado: 10 minutos
 */
 
+SELECT LAST_NAME, DECODE(COMMISSION_PCT, NULL, 'NO GANA COMISION', 'GANA COMISION') "COMISION"
+FROM HR.EMPLOYEES
+WHERE LAST_NAME LIKE 'F%';
+ 
 /*
 E12. Obtener para cada empleado que trabaje en un departamento con identificador menor a 41 el nombre del departamento en el
 que se encuentran utilizando para ello la función DECODE.
 */
+--Preguntar sobre el uso del DECODE
+SELECT E.FIRST_NAME, E.LAST_NAME,
+       DECODE(D.DEPARTMENT_ID, 
+              10, 'Administration',
+              20, 'Marketing',
+              30, 'Purchasing',
+              40, 'Human Resources',
+              'Unknown Department') "DEPARTMENT_NAME"
+FROM HR.EMPLOYEES E
+JOIN HR.DEPARTMENTS D ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+WHERE D.DEPARTMENT_ID < 41;
