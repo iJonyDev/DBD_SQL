@@ -1,3 +1,5 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
 
 /*
 P1. Por motivos de seguridad, se desea obtener una clave alfanumérica para cada trabajador. A partir de los datos almacenados en
@@ -87,6 +89,19 @@ Texas			| The string 'Oil Wells'
 California		| The CITY column value
 New Jersey		| The STREET_ADDRESS column value
 
+EJEMLO:
+	select last_name, hire_date,
+	trunc(months_between(sysdate,hire_date)/12) years,
+	trunc(months_between(sysdate,hire_date)/60) "Years divided by 5",
+	case
+		when trunc(months_between(sysdate,hire_date)/60) < 1 then 'Intern'
+		when trunc(months_between(sysdate,hire_date)/60) < 2 then 'Junior'
+		when trunc(months_between(sysdate,hire_date)/60) < 3 then 'Intermediate'
+		when trunc(months_between(sysdate,hire_date)/60) < 4 then 'Senior'
+		else 'Furniture'
+	end Loyalty
+		from employees
+	where department_id in (60,10);
 */
 
 

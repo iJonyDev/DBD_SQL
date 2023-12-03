@@ -1,3 +1,5 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
 
 /*
 E1. Pruebe los cuatro operadores con la tabla REGIONS y entienda los resultados. Tiempo estimado: 10 minutos

@@ -1,3 +1,7 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
+
+
 /*E1. Obtenga el nombre y el salario de aquellos empleados que ganen más de 5000 dólares. Tiempo estimado: 5 minutos
 */
 

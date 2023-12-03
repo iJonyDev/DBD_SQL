@@ -1,3 +1,6 @@
+--Esquema ORDER_ENTRY
+https://drive.google.com/file/d/1C11vWvxrIlI8hg87IgkwikcHvs-BjxOe/view?usp=sharing
+
 /*
 P1. Obtenga información estructural de las tablas PRODUCT_INFORMATION y ORDERS.
 */

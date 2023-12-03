@@ -1,3 +1,6 @@
+--Esquema SCOTT
+https://drive.google.com/file/d/17-8LR1fyr8FudYgvgEYOulJQTeLe6lzi/view?usp=sharing
+
 /*
 A1. Seleccionar toda la información contenida en la tabla EMP.
 */

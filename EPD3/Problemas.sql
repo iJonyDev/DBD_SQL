@@ -1,3 +1,6 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
+
 /*
 P1 (HR). Seleccione el apellido, salario, id de departamento, id de empleo y comisión de aquellos empleados cuyo apellido
 contenga la letra ‘a’ y su salario sea mayor que el id de departamento multiplicado por 200 ó aquellos empleados cuyo id de empleo

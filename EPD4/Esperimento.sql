@@ -1,3 +1,6 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
+
 /*
 E1. Reescriba la siguiente consulta de una forma más compacta para que devuelva los mismos resultados. Tiempo estimado: 5
 minutos

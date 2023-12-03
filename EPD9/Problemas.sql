@@ -1,3 +1,6 @@
+--ENLACE: imagen del esquema HR.
+https://drive.google.com/file/d/1Y8_3PAaah7mZif0CnXVWrIGJgLajMkQM/view?usp=sharing
+
 /*
 P1. Cada empleado tiene su empleo actual, JOB_ID, en la tabla EMPLOYEES. Aquellos trabajos que habían desarrollado
 previamente están registrados en la tabla JOB_HISTORY. Implemente una consulta que devuelva el identificador y el apellido de
