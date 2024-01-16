@@ -47,3 +47,22 @@
 
 			r = π idcliente,nombrecliente (σ estado = 'CHIAPAS' (cliente))
 			π nombresucursal(r ⨝ ctacliente ⨝ cuenta ⨝ sucursal)
+
+-- 9) Toda la informacion de los clientes que tienen una cuenta y un prestamo en el banco
+
+			r = prestatario ⨝ ctacliente
+			π idcliente,nombrecliente,direccion,estado,nacimiento (cliente ⨝ r )
+
+-- 10) Nombre de los clientes con cuenta en YUCATÁN y que viven en CAMPECHE
+		-- viven en CAMPECHE
+			r = π idcliente,nombrecliente (σ estado = 'CAMPECHE' (cliente)) 
+		-- con cuenta en YUCATÁN
+			s = π idcliente,nombrecliente(cliente ⨝ ctacliente ⨝ cuenta ⨝ (σ estado = 'YUCATÁN' (sucursal))) 
+		-- con cuenta en YUCATÁN y viven en CAMPECHE
+			r ∩ s
+
+-- 11) Nombre de los clientes con un prestamo mayor a $60,000.00
+
+			r = σ importe > 60000.00 (prestamo)
+			π nombrecliente,prestamo.importe(cliente ⨝ prestatario ⨝ r)
+
