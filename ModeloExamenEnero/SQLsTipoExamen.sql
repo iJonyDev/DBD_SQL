@@ -7,7 +7,7 @@
   from organismo o, tiene t, gen g
   where o.codo = t.codo and t.goid = g.goid
   group by o.nomc;
---Obtener una lista de todos los organismos y los nombre de las proteinas que codifican sus genes
+--Obtener una lista de todos los organismos y los nombre de las proteínas que codifican sus genes
   select o.codo, o.nomc, c.proteina
   from organismo o, tiene t, gen g, secuencia s, codificadora c
   where o.codo = t.codo and t.goid = g.goid and g.goid = s.goid and s.goid = c.goid;
